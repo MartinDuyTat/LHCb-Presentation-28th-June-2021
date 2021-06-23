@@ -75,12 +75,16 @@
 \begin{frame}{Summary of analysis procedure}
   \begin{enumerate}
     \setlength\itemsep{1.5em}
+      \item{Currently only Run $2$}
       \item{Perform global fit to fix yields and shapes}
       \item{Separate $B^\pm$ candidates by charge and into bins}
       \item{Extract $x_\pm$ and $y_\pm$ with a simultaneous fit}
       \item{Interpret $x_\pm$ and $y_\pm$ in terms of $\gamma$}
-      \item{Currently only Run $2$}
   \end{enumerate}
+  \begin{block}{CP observables}
+    $x_\pm = r_B^{DK}\cos(\delta_B^{DK}\pm\gamma), \quad y_\pm = r_B^{DK}\sin(\delta_B^{DK}\pm\gamma)$ \\
+    $x_\xi^{D\pi} = \Re(\xi^{D\pi}), \quad y_\xi^{D\pi} = \Im(\xi^{D\pi}), \quad \xi^{D\pi} = \frac{r_B^{D\pi}}{r_B^{DK}}e^{i(\delta_B^{D\pi} - \delta_B^{DK})}$
+  \end{block}
 \end{frame}
 
 % These three lines create an automatically generated table of contents.
@@ -180,12 +184,12 @@
     \item{Minimize statistical $\gamma$ error}
     \item{Procedure:}
     \begin{enumerate}
+    \setlength\itemsep{0.5em}
       \item{Perform global fit to fix signal and background yields and PDF shapes}
       \item{Generate $1000$ toy datasets using the global fit parameters}
       \item{Fit for $\gamma$}
       \item{Extract expected $\gamma$ precision from $\gamma$ distribution of toy datasets}
     \end{enumerate}
-    \item{Only Run $2$ for now}
   \end{itemize}
 \end{frame}
 
@@ -208,59 +212,165 @@
 \begin{frame}{Global mass fit}
   \begin{figure}
     \centering
-    \includegraphics[width = 1.0\textwidth]{example-image-a}
+    \includegraphics[width = 1.0\textwidth]{GlobalFit.png}
     \caption{Global mass fit (left) $B\to DK$ and (right) $B\to D\pi$}
   \end{figure}
 \end{frame}
 
 \section{Toy studies}
 \subsection{Standard fits with 4 and 8 bins}
-\begin{frame}{Standard toy studies with $4$ and $8$ bins}
+\begin{frame}{Standard toy studies with $4$ bins}
   \begin{figure}
     \centering
     \vspace{-0.2cm}
     \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{example-image-a}
-      \caption{$4$ bins}
+      \includegraphics[width = 1.0\textwidth]{Toy_Standard_4Bins.png}
+      \caption{$\gamma$ from toys}
     \end{subfigure}%
     \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{example-image-a}
-      \caption{$8$ bins}
+      \includegraphics[width = 1.0\textwidth]{Toy_Standard_4Bins_Pull.png}
+      \caption{$\gamma$ pull distribution}
     \end{subfigure}
-    \caption{$\gamma$ precision in toy studies}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Standard toy studies with $8$ bins}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{Toy_Standard_8Bins.png}
+      \caption{$\gamma$ from toys}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{Toy_Standard_8Bins_Pull.png}
+      \caption{$\gamma$ pull distribution}
+    \end{subfigure}
   \end{figure}
 \end{frame}
 
 \subsection{Biases in CP observables}
-\begin{frame}{Biases in CP observables}
+\begin{frame}{Biases in $B\to DK$ CP observables, $4$ bins}
   \begin{figure}
     \centering
     \vspace{-0.2cm}
-    \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{example-image-a}
-      \caption{$4$ bins}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_xp_dk_4Bins_pull.png}
     \end{subfigure}%
-    \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{example-image-a}
-      \caption{$8$ bins}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_xm_dk_4Bins_pull.png}
     \end{subfigure}
-    \caption{CP observable that has bias}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_yp_dk_4Bins_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_ym_dk_4Bins_pull.png}
+    \end{subfigure}
+    \caption{$B\to DK$ CP observable pull distributions}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Biases in CP observables}
+\begin{frame}{Biases in $B\to DK$ CP observables, $8$ bins}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_xp_dk_8Bins_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_xm_dk_8Bins_pull.png}
+    \end{subfigure}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_yp_dk_8Bins_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_ym_dk_8Bins_pull.png}
+    \end{subfigure}
+    \caption{$B\to DK$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Biases in $B\to D\pi$ CP observables, $4$ bins}
   \begin{figure}
     \centering
     \vspace{-0.2cm}
     \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{example-image-a}
-      \caption{$4$ bins}
+      \includegraphics[width = 1.0\textwidth]{A_Re_xi_dpi_4Bins_pull.png}
     \end{subfigure}%
     \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{example-image-a}
-      \caption{$8$ bins}
+      \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_4Bins_pull.png}
     \end{subfigure}
-    \caption{CP observable bias with increased statistics}
+    \caption{$B\to D\pi$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Biases in $B\to D\pi$ CP observables, $4$ bins, $2$x statistics}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Re_xi_dpi_4Bins_StatsMultiplier2_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_4Bins_StatsMultiplier2_pull.png}
+    \end{subfigure}
+    \caption{$B\to D\pi$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Biases in $B\to D\pi$ CP observables, $4$ bins, $10$x statistics}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Re_xi_dpi_4Bins_StatsMultiplier10_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_4Bins_StatsMultiplier10_pull.png}
+    \end{subfigure}
+    \caption{$B\to D\pi$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Biases in $B\to D\pi$ CP observables, $8$ bins}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Re_xi_dpi_8Bins_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_8Bins_pull.png}
+    \end{subfigure}
+    \caption{$B\to D\pi$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Biases in $B\to D\pi$ CP observables, $8$ bins, $2$x statistics}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Re_xi_dpi_8Bins_StatsMultiplier2_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_8Bins_StatsMultiplier2_pull.png}
+    \end{subfigure}
+    \caption{$B\to D\pi$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Biases in $B\to D\pi$ CP observables, $8$ bins, $10$x statistics}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Re_xi_dpi_8Bins_StatsMultiplier10_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_8Bins_StatsMultiplier10_pull.png}
+    \end{subfigure}
+    \caption{$B\to D\pi$ CP observable pull distributions}
   \end{figure}
 \end{frame}
 
