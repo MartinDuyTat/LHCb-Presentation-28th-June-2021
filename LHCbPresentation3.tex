@@ -92,6 +92,15 @@
   \tableofcontents
 \end{frame}
 
+\section{Global mass fit}
+\begin{frame}{Global mass fit}
+  \begin{figure}
+    \centering
+    \includegraphics[width = 1.0\textwidth]{GlobalFit.png}
+    \caption{Global mass fit (left) $B\to DK$ and (right) $B\to D\pi$}
+  \end{figure}
+\end{frame}
+
 \section{Backgrounds}
 \subsection{Mis-ID from \texorpdfstring{$D\to K\pi\pi\pi$}{D to Kpipipi}}
 \begin{frame}{Mis-ID from $D\to K\pi\pi\pi$}
@@ -100,6 +109,7 @@
     \item{Peaks a much higher $D$ mass}
     \item{Much higher branching ratio}
     \item{Similar background from $D\to\pi\pi\pi\pi$ is negligible}
+    \item{Pick cut at $0$ for now}
   \end{itemize}
   \begin{figure}
     \centering
@@ -119,13 +129,11 @@
 \begin{frame}{Charmless backgrounds}
   \begin{itemize}
     \setlength\itemsep{1.5em}
-    \item{Background from $B^\pm\to KK\pi\pi h^\pm$}
+    \item{$B^\pm\to KK\pi\pi h^\pm$ background}
     \item{Flight significance (FS) cut at $2$}
-    \item{Look in the lower $D$ mass sideband $m(D) = [\SI{1770}{\mega\eV}, \SI{1820}{\mega\eV}]$}
-    \item{Upper sideband contaminated with $K\pi\pi\pi$}
-    \item{Train a separate BDT without $\chi^2_{\text{DTF}}$ to preserve $D$ sidebands}
-    \item{Overlap between samples without FS cut: $90.7\%$}
-    \item{Overlap between samples with FS cut: $93.1\%$}
+    \item{Use $D$ mass sideband $m(D) = [\SI{1770}{\mega\eV}, \SI{1820}{\mega\eV}]$}
+    \item{Train a separate BDT without $\chi^2_{\text{DTF}}$}
+    \item{Overlap between samples with (without) FS cut: $93.1\%$ ($90.7\%$)}
   \end{itemize}
 \end{frame}
 
@@ -177,6 +185,7 @@
   \end{figure}
 \end{frame}
 
+\section{BDT cut optimization}
 \begin{frame}{BDT cut optimization}
   \begin{itemize}
     \setlength\itemsep{1.5em}
@@ -205,15 +214,6 @@
       \includegraphics[width = 1.0\textwidth]{BDTOptimization_8Bins_Run2.png}
       \caption{$\gamma$ precision vs BDT cut for $8$ bins}
     \end{subfigure}
-  \end{figure}
-\end{frame}
-
-\section{Global mass fit}
-\begin{frame}{Global mass fit}
-  \begin{figure}
-    \centering
-    \includegraphics[width = 1.0\textwidth]{GlobalFit.png}
-    \caption{Global mass fit (left) $B\to DK$ and (right) $B\to D\pi$}
   \end{figure}
 \end{frame}
 
@@ -270,26 +270,6 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Biases in $B\to DK$ CP observables, $8$ bins}
-  \begin{figure}
-    \centering
-    \vspace{-0.2cm}
-    \begin{subfigure}{0.42\textwidth}
-      \includegraphics[width = 1.0\textwidth]{A_xp_dk_8Bins_pull.png}
-    \end{subfigure}%
-    \begin{subfigure}{0.42\textwidth}
-      \includegraphics[width = 1.0\textwidth]{A_xm_dk_8Bins_pull.png}
-    \end{subfigure}
-    \begin{subfigure}{0.42\textwidth}
-      \includegraphics[width = 1.0\textwidth]{A_yp_dk_8Bins_pull.png}
-    \end{subfigure}%
-    \begin{subfigure}{0.42\textwidth}
-      \includegraphics[width = 1.0\textwidth]{A_ym_dk_8Bins_pull.png}
-    \end{subfigure}
-    \caption{$B\to DK$ CP observable pull distributions}
-  \end{figure}
-\end{frame}
-
 \begin{frame}{Biases in $B\to D\pi$ CP observables, $4$ bins}
   \begin{figure}
     \centering
@@ -329,6 +309,65 @@
       \includegraphics[width = 1.0\textwidth]{A_Im_xi_dpi_4Bins_StatsMultiplier10_pull.png}
     \end{subfigure}
     \caption{$B\to D\pi$ CP observable pull distributions}
+  \end{figure}
+\end{frame}
+
+\subsection{Systematics from \texorpdfstring{$c_i$, $s_i$}{ci, si}}
+\begin{frame}{Systematics from $c_i$, $s_i$}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{cisi_Systematic_4Bins_Run2.png}
+      \caption{$4$ bins}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width = 1.0\textwidth]{cisi_Systematic_8Bins_Run2.png}
+      \caption{$8$ bins}
+    \end{subfigure}
+    \caption{$c_i$, $s_i$ systematic uncertainty with extrapolated BESIII statistics}
+  \end{figure}
+\end{frame}
+
+\section{Summary and future work}
+\begin{frame}{Summary and future work}
+  \begin{itemize}
+    \item{Summary:}
+    \begin{enumerate}
+      \setlength\itemsep{1.3em}
+      \item{Global mass fit looks promising}
+      \item{$D\to K\pi\pi\pi$ and charmless backgrounds under control}
+      \item{Toy studies show no suspicious behaviour}
+      \item{Expected $c_i$ and $s_i$ systematics are not too large}
+    \end{enumerate}
+    \item{Next steps:}
+    \begin{enumerate}
+      \setlength\itemsep{1.3em}
+      \item{Study semileptonic backgrounds in RapidSim}
+      \item{Recalculate PID efficiencies with PIDCalib}
+      \item{Refit MC signal shapes}
+      \item{Rerun everything with Run $1$ (finally!)}
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Backup: Biases in $B\to DK$ CP observables, $8$ bins}
+  \begin{figure}
+    \centering
+    \vspace{-0.2cm}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_xp_dk_8Bins_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_xm_dk_8Bins_pull.png}
+    \end{subfigure}
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_yp_dk_8Bins_pull.png}
+    \end{subfigure}%
+    \begin{subfigure}{0.42\textwidth}
+      \includegraphics[width = 1.0\textwidth]{A_ym_dk_8Bins_pull.png}
+    \end{subfigure}
+    \caption{$B\to DK$ CP observable pull distributions}
   \end{figure}
 \end{frame}
 
@@ -372,45 +411,6 @@
     \end{subfigure}
     \caption{$B\to D\pi$ CP observable pull distributions}
   \end{figure}
-\end{frame}
-
-\subsection{Systematics from \texorpdfstring{$c_i$, $s_i$}{ci, si}}
-\begin{frame}{Systematics from $c_i$, $s_i$}
-  \begin{figure}
-    \centering
-    \vspace{-0.2cm}
-    \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{cisi_Systematic_4Bins_Run2.png}
-      \caption{$4$ bins}
-    \end{subfigure}%
-    \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width = 1.0\textwidth]{cisi_Systematic_8Bins_Run2.png}
-      \caption{$8$ bins}
-    \end{subfigure}
-    \caption{Systematic uncertainty from $c_i$ and $s_i$ with extrapolated BESIII statistics}
-  \end{figure}
-\end{frame}
-
-\section{Summary and future work}
-\begin{frame}{Summary and future work}
-  \begin{itemize}
-    \item{Summary:}
-    \begin{enumerate}
-      \setlength\itemsep{1.3em}
-      \item{Global mass fit looks promising}
-      \item{$D\to K\pi\pi\pi$ and charmless backgrounds under control}
-      \item{Toy studies show no suspicious behaviour}
-      \item{Expected $c_i$ and $s_i$ systematics are not too large}
-    \end{enumerate}
-    \item{Next steps:}
-    \begin{enumerate}
-      \setlength\itemsep{1.3em}
-      \item{Study semileptonic backgrounds in RapidSim}
-      \item{Recalculate PID efficiencies with PIDCalib}
-      \item{Refit MC signal shapes}
-      \item{Rerun everything with Run $1$ (finally!)}
-    \end{enumerate}
-  \end{itemize}
 \end{frame}
 
 \end{document}
